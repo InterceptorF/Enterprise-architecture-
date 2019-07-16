@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+ForrySANDesigns
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+
+<script src="jpg_1.js" type="text/jscript" language="jscript"></script>
+
+
+
+
+<script type="text/jscript" language="jscript">
+
+var pageID = 8;
+
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.350002;
+	viewMgr.visBBoxRight = 10.787148;
+	viewMgr.visBBoxBottom = 1.044458;
+	viewMgr.visBBoxTop = 8.287502;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="Shows the location of the selected shape" src="arrow.gif"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF">
+
+<div id=arrowdiv style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+<DIV id=RasterDiv>
+
+
+<center>
+  <IMG id="ConvertedImage" SRC="jpg_7.jpg" ALT="3PAR POS128_SAN Project Scope" name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="This SAN has logical separation with redundant paths forming a..." origTitle="This SAN has logical separation with redundant paths forming a..." TITLE="This SAN has logical separation with redundant paths forming a..." HREF="http://www.level3.com/" target="_top" COORDS="48,340,49,340,57,340,82,340,91,340,120,340,128,340,176,340,184,340,216,340,224,340,246,340,254,340,314,340,314,320,273,320,273,305,319,305,319,285,2,285,2,302,2,305,2,320,2,323,2,338,2,340,2,358,48,358,48,340" onmouseover="UpdateTooltip(this,8,2)" onfocus="UpdateTooltip(this,8,2)" onclick="return OnShapeClick(8,2);" onkeyup="OnShapeKey(8,2);">
+  <AREA shape="POLYGON" tabindex="1" ALT="This SAN has logical separation with redundant paths forming a..." origTitle="This SAN has logical separation with redundant paths forming a..." TITLE="This SAN has logical separation with redundant paths forming a..." HREF="http://www.level3.com/" target="_top" COORDS="159,535,155,535,146,535,113,535,109,535,74,535,68,535,68,519,310,519,310,501,327,501,327,483,328,483,336,483,336,463,329,463,329,445,304,445,304,430,338,430,338,410,308,410,308,392,207,392,202,392,184,392,184,374,2,374,2,392,2,394,2,410,2,412,2,428,2,430,2,445,2,448,2,463,2,466,2,481,2,483,2,499,2,501,2,517,2,519,2,535,2,537,2,555,33,555,61,555,74,555,109,555,113,555,146,555,155,555,159,555,189,555,189,535,159,535" onmouseover="UpdateTooltip(this,8,2)" onfocus="UpdateTooltip(this,8,2)" onclick="return OnShapeClick(8,2);" onkeyup="OnShapeKey(8,2);">
+</MAP>
+
+
+
+</DIV>
+
+</body>
+</html>
+
